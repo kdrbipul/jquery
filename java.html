@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script rel = "script" src = "jquery-3.6.3.js"></script>
+	</head>
+	<body>
+		<!-- ==  Click event Hide/Show Action == -->
+		<div id="hideshow" style = "padding:50px; width:300px; background-color:red; text-align:center;">click to change</div><br>
+		<button id ="hide">Hide</button>
+		<button id ="show">Show</button>
+		<button id ="all">All</button>
+		
+		
+		
+		<!-- == Double Click event SlideUp/SlideDown Action == -->
+		<h3>Double Click FadeIn/Out Action</h3>
+		<div id="fade-box" style = "padding:50px; width:300px; background-color:yellow; text-align:center;">Double Click FadeIn/Out Action</div><br>
+		<button id ="fd1">FadeIn</button>
+		<button id ="fd2">FadeOut</button>
+		<button id ="fdall">All</button>
+		<!-- == Click event SlideUp/SlideDown Action == -->
+		<h3>Click event SlideUp/SlideDown Action</h3>
+		<div id="slid-box" style = "padding:50px; width:300px; background-color:green; text-align:center;">Double Click FadeIn/Out Action</div><br>
+		<button id ="sd1">SlidUp</button>
+		<button id ="sd2">SlidDown</button>
+		<button id ="sdall">All</button><br>
+		<!-- ==  Scroll Event & Animate Action == -->
+		<h3>Click event SlideUp/SlideDown Action</h3>
+		<div id="scroll-box" style = "padding:50px; width:300px; background-color:green; text-align:center;">
+			<span id ="scroll"></span>
+		</div><br>
+		
+		<script>
+			$(document).ready(function (){
+			/*== Scroll Event & Animate Action == */
+				$(window).scroll(function(){
+					$('#scroll-box').animate({height:'500px', width:'500px'});
+					var x = $(wnidow).scrollTop();
+					$('#scroll').html(x);
+				});
+			/*== Click event SlideUp/SlideDown Action == */
+				$('#sd1').click(function(){
+					$('#slid-box').slideDown(2000);
+				});
+				$('#sd2').click(function(){
+					$('#slid-box').slideUp(2000);
+				});
+				$('#sdall').click(function(){
+					$('#slid-box').slideToggle(2000);
+				});
+			/*== Double Click and FadeIn/Out Action == */
+				$('#fd2').dblclick(function(){
+					$('#fade-box').fadeOut(2000);
+				});
+				$('#fd1').dblclick(function(){
+					$('#fade-box').fadeIn(2000);
+				});
+				$('#fdall').dblclick(function(){
+					$('#fade-box').fadeToggle(2000);
+				});
+			/*== Click and Show/Out Action == */
+				$('#hide').click(function(){
+					$('#hideshow').hide(1000);
+				});
+				$('#show').click(function(){
+					$('#hideshow').show(1000);
+				});
+				$('#all').click(function(){
+					$('#hideshow').toggle(1000);
+				});
+			});
+		</script>
+	</body>
+</html>
